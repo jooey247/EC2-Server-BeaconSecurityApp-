@@ -37,4 +37,6 @@ public class MainController {
     public UserInfo addUser(@RequestBody UserInfo user) {
         return userInfoRepository.save(user);
     }
+	
+	
 }
