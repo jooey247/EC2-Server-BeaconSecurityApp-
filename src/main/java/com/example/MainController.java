@@ -78,15 +78,15 @@ public class MainController {
 	// 2016.07.27 seulki
 	// add new user (새로운 유저 추가)
 	@RequestMapping(value = "/users/user", method = RequestMethod.POST, consumes = "application/json")
-	public String addUser(@RequestBody UserInfo user) {
-
+	public @ResponseBody String addUser(@RequestBody UserInfo user) {
+		//doesnt exist same information (일치하는 정보가 없다)
 		if (userInfoRepository.findOne(user.getUserId()) == null) {
 			
+			//save information (정보를 저장하고)
 			userInfoRepository.save(user);
-
 			return "success";
 		}
-
+		//exist same information (일치하는 정보가 존재한다면)
 		else
 			return "duplicate";
 	}
@@ -94,15 +94,18 @@ public class MainController {
 	// 2016.07.27 seulki
 	// add new place (새로운 place 추가)
 	@RequestMapping(value = "/users/place", method = RequestMethod.POST, consumes = "application/json")
-	public String addUser(@RequestBody PlaceInfo place) {
+	public @ResponseBody String addUser(@RequestBody PlaceInfo place) {
 
+		//doesnt exist same information (일치하는 정보가 없다)
 		if (placeInfoRepository.findOne(place.getPlcId()) == null) {
 			
+			//save information (정보를 저장하고)
 			placeInfoRepository.save(place);
 
-			return "seccess";
+			return "success";
 		}
 
+		//exist same information (일치하는 정보가 존재한다면)
 		else
 			return "duplicate";
 			
