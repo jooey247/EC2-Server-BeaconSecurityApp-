@@ -1,4 +1,4 @@
-package com.example;
+package cse.knu.kr.deagu.beaconsecurityapp;
 
 import java.util.List;
 
@@ -51,7 +51,7 @@ public class MainController {
 			return "fail";
 		else {
 			// collect password (패스워드가 일치할 경우)
-			if (user.getUserPW().equals(foundUser.getUserPw()))
+			if (user.getUserPw().equals(foundUser.getUserPw()))
 				return "success";
 
 			// wrong password (패스워드를 틀렸을 경우)

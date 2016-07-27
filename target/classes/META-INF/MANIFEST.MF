@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Implementation-Title: Server
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: de3
-Implementation-Vendor-Id: com.example
+Built-By: juhee
+Implementation-Vendor-Id: cse.knu.kr.deagu.beaconsecurityapp
 Build-Jdk: 1.8.0_91
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.

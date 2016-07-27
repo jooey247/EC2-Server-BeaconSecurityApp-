@@ -1,4 +1,4 @@
-package cse.knu.kr.deagu.beaconsecurityapp.Users;
+package cse.knu.kr.deagu.beaconsecurityapp;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -38,16 +38,6 @@ public class UserInfo {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
-    public String getPlcName() {
-        return plcName;
-    }
-
-    public void setPlcName(String plcName) {
-        this.plcName = plcName;
-    }
-
-
 
     public String getUserPw() {
         return userPw;

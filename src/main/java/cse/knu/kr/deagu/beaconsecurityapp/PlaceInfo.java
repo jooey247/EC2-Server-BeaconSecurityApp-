@@ -1,4 +1,4 @@
-package cse.knu.kr.deagu.beaconsecurityapp.Users;
+package cse.knu.kr.deagu.beaconsecurityapp;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -12,14 +12,14 @@ import javax.persistence.JoinColumn;
 @Entity
 public class PlaceInfo{
 	
-	@id //beacon mac address ,PK
+	@Id
     private String plcId;
     private String plcName;
     private String plcPw;
     private String plcAdrs;
     private String plcOption;
     
-    @JoinCloumn //FK
+    @JoinColumn
     private String userName;
     
 
