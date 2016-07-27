@@ -16,7 +16,32 @@ public class MainController {
 	@Autowired
 	private UserInfoRepository userInfoRepository;
 	
-	// 모든 유저 리스트 반환
+	
+	
+	//login
+	@RequestMapping("/users_login")
+	public
+	@ResponseBody
+	String login(@RequestBody UserInfo user) {
+		UserInfo foundUser = userInfoRepository.findOne(user.getUserID());
+		
+		//Doesn't exist user info (사용자 정보가 없을 경우)
+		if(foundUser==null)
+			return "Doesn't exist ID!";
+		else
+		{
+			//collect password (패스워드가 일치할 경우)
+			if(user.getUserPW().equals(foundUser.getUserPW()))
+				return "Success Login!";
+			
+			//wrong password (패스워드를 틀렸을 경우)
+			else
+				return "Wrong Password!";
+			
+		}
+	}
+	
+	// return all user list (모든 유저 리스트 반환)
 	@RequestMapping("/users")
 	public
 	@ResponseBody
@@ -24,7 +49,7 @@ public class MainController {
 		return userInfoRepository.findAll();
 	}
 	
-	// userId로 검색해서 반환
+	// search user Id and return (userId로 검색해서 반환)
 	@RequestMapping("/users/{userId}")
 	public
 	@ResponseBody
@@ -32,7 +57,7 @@ public class MainController {
 		return userInfoRepository.findOne(userId);
 	}
 	
-	// 새로운 유저 추가
+	// add new user (새로운 유저 추가)
 	@RequestMapping(value = "/users", method = RequestMethod.POST, consumes = "application/json")
     public UserInfo addUser(@RequestBody UserInfo user) {
         return userInfoRepository.save(user);

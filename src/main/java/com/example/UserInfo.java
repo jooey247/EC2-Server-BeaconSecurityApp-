@@ -2,31 +2,38 @@ package com.example;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class UserInfo {
 
 	@Id
-	private String userID;
-	private String userPW;
-	private String userSign;
+	private String userId;
+	private String userPw;
+	private String userName;
 	
-	public String getUserID() {
-		return userID;
+	@ManyToOne
+	@JoinColumn
+	private String plcName;
+	
+	public String getUserId() {
+		return userId;
 	}
-	public void setUserID(String userID) {
-		this.userID = userID;
+	public void setUserId(String userID) {
+		this.userId = userID;
 	}
-	public String getUserPW() {
-		return userPW;
+	public String getUserPw() {
+		return userPw;
 	}
-	public void setUserPW(String userPW) {
-		this.userPW = userPW;
+	public void setUserPw(String userPw) {
+		this.userPw = userPw;
 	}
-	public String getUserSign() {
-		return userSign;
+
+	public void setUserName(String userName){
+		this.userName = userName;
 	}
-	public void setUserSign(String userSign) {
-		this.userSign = userSign;
+	public String getUserName(){
+		return userName;
 	}
 }
